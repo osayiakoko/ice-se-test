@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import environ, os
+from datetime import timedelta
 from pathlib import Path
 
 
@@ -42,9 +43,13 @@ DJANGO_APPS = [
     'django.contrib.postgres',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    'rest_framework',
+    'corsheaders',
+]
 
 LOCAL_APPS = [
+    'core.apps.CoreConfig',
     'account.apps.AccountConfig',
 ]
 
@@ -125,3 +130,39 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTH_USER_MODEL = 'account.User'
+
+
+#  REST FRAMEWORK SETTINGS
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'core.renderers.CustomCamelCaseJSONRenderer',
+        'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer',
+    ],
+    'DEFAULT_PARSER_CLASSES': [
+        # If you use MultiPartFormParser or FormParser, we also have a camel case version
+        'djangorestframework_camel_case.parser.CamelCaseFormParser',
+        'djangorestframework_camel_case.parser.CamelCaseMultiPartParser',
+        'djangorestframework_camel_case.parser.CamelCaseJSONParser',
+    ],
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ],
+}
+
+
+# DRF SIMPLE JWT
+SIMPLE_JWT = { 
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=7), 
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30), 
+}
+
+
+#CORS SETTING 
+CORS_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
