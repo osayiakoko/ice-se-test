@@ -1,0 +1,25 @@
+# virtualenv
+venv/
+
+# development dependent
+.vscode
+*.sqlite3
+media/
+staticfiles/
+*.pyc
+*.db
+*.pid
+
+# python caches
+*/__pycache__
+*/__pycache__/*/__pycache__
+
+# Ignore Django Migrations in Development if you are working on team
+# Only for Development only
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+!**/migrations/*.py
+
+# postgres docker data volumn
+data/
