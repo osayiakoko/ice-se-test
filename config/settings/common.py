@@ -46,6 +46,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'corsheaders',
+    'phonenumber_field',
     'drf_yasg',
 ]
 
@@ -167,6 +168,12 @@ SIMPLE_JWT = {
 #CORS SETTING 
 CORS_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+
+# PHONE NUMBER FIELD SETTINGS
+PHONENUMBER_DB_FORMAT = 'E164'
+PHONENUMBER_DEFAULT_FORMAT = 'E164'
+PHONENUMBER_DEFAULT_REGION = 'NG'
 
 
 # YASG SETTINGS
