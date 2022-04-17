@@ -19,3 +19,17 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+# REST FRAMEWORK SETTINGS
+REST_FRAMEWORK['DEFAULT_RENDERER_CLASSES'].append(
+    'djangorestframework_camel_case.render.CamelCaseBrowsableAPIRenderer'
+)
+REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'].append(
+    'rest_framework.authentication.SessionAuthentication'
+)
+
+
+# SWAGGER SETTINGS
+SWAGGER_SETTINGS['USE_SESSION_AUTH'] = True
+SWAGGER_SETTINGS['SECURITY_DEFINITIONS']['Basic'] = {'type': 'basic'}

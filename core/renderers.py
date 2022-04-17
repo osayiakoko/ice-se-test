@@ -15,7 +15,7 @@ class CustomCamelCaseJSONRenderer(CamelCaseJSONRenderer):
         else:
             response_dict = {
                 'status': 'failure', 'data': None, 
-                'message': data.get('detail') or data, 
+                'message': data.get('detail') or data.get('details') or data, 
             }
 
         return super(CustomCamelCaseJSONRenderer, self).render(
