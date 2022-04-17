@@ -10,7 +10,7 @@ app_name = "doc"
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="ICE customers's transactions Dasboard API",
+        title="ICE Dasboard API",
         default_version='v1',
         description="""
             This is a SE test project for [ICE commercial power](https://icecommpower.com/) written with Django Rest Framework.
