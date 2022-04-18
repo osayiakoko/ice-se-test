@@ -18,7 +18,7 @@ staticfiles/
 # Only for Development only
 **/migrations/**
 !**/migrations/__init__.py
-# !**/migrations/*.py
+!**/migrations/*.py
 
 # postgres docker data volumn
 data/

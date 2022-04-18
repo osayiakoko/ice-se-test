@@ -4,6 +4,16 @@ from .common import *
 DEBUG = False
 
 
+ALLOWED_HOSTS = [
+    'projectzap.tk',
+    'ec2-18-191-190-109.us-east-2.compute.amazonaws.com'
+]
+
+
+CORS_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = []
+
+
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 DATABASES = {
