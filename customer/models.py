@@ -16,6 +16,7 @@ class Customer(TimestampModel):
 
     class Meta:
         db_table = 'customer'
+        ordering = ('-id',)
 
     def __str__(self):
         return self.name
@@ -38,6 +39,7 @@ class CustomerPayment(TimestampModel):
 
     class Meta:
         db_table = 'customer_payment'
+        ordering = ('-id',)
 
     def __str__(self):
         return self.ref_code
