@@ -1,4 +1,5 @@
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
+from django.contrib.postgres.fields import CIEmailField
 from django.core.mail import send_mail
 from django.db import models
 from django.utils import timezone
@@ -10,7 +11,7 @@ from .managers import UserManager
 class User(AbstractBaseUser, PermissionsMixin):
     first_name = models.CharField(_('first name'), max_length=150, blank=True)
     last_name = models.CharField(_('last name'), max_length=150, blank=True)
-    email = models.EmailField(_('email address'), unique=True, null=True)
+    email = CIEmailField(_('email address'), unique=True)
     is_staff = models.BooleanField(
         _('staff status'),
         default=False,
