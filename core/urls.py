@@ -16,7 +16,7 @@ schema_view = get_schema_view(
             This is a SE test project for [ICE commercial power](https://icecommpower.com/) written with Django Rest Framework.
             The `swagger-ui` view can be found [here](/swagger).
             The `ReDoc` view can be found [here](/redoc).
-            You can log in using the pre-existing `admin@gmail.com` user with password `Pa$$0000`.
+            You can log in using the pre-existing `admin@email.com` user with password `pass123`.
         """,
         terms_of_service="https://icecommpower.com/",
         contact=openapi.Contact(email="osayiakoko@gmail.com"),

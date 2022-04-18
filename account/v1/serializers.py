@@ -25,6 +25,15 @@ class UserSerializer(serializers.ModelSerializer):
         ]
 
 
+class TokenSerializer(serializers.Serializer):
+    refresh_token = serializers.CharField()
+    access_token = serializers.CharField()
+
+
+class UserTokenSerializer(TokenSerializer):
+    user = UserSerializer()
+
+
 class RefreshTokenSerializer(serializers.Serializer):
     refresh_token = serializers.CharField()
 
@@ -61,4 +70,8 @@ class ChangePasswordSerializer(serializers.Serializer):
         instance.set_password(new_password)
         instance.save()
 
-        return instance
+        refresh = RefreshToken.for_user(instance)
+        return TokenSerializer({
+            'access_token': str(refresh.access_token),
+            'refresh_token': str(refresh),
+        }).data
