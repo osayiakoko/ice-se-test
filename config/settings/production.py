@@ -6,7 +6,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'projectzap.tk',
-    'www.projectzap.tk'
+    'www.projectzap.tk',
 ]
 
 
