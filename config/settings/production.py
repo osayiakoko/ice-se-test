@@ -6,7 +6,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     'projectzap.tk',
-    'ec2-18-191-190-109.us-east-2.compute.amazonaws.com'
 ]
 
 
@@ -35,8 +34,8 @@ AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-# AWS_S3_CUSTOM_DOMAIN = 'd1984j5jupcd16.cloudfront.net'
+# AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = 'dcy0w1iq7775c.cloudfront.net'
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
 }
