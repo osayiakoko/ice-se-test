@@ -36,6 +36,7 @@
     - Fetch all payments for a single customer, query:  ___customer_id=1___
     - Fetch payments above a given amount, query: ___amount_gt=60000___ 
     - Fetch payments below a given amount, query: ___amount_lt=100000___ 
+- **Automated Test**: Test Cases for api routes
 - **Admin**: Admin for api backend for superuser purpose
 - **Development**: Optimized for easy development using Docker
 - **Docs**: Swagger & redoc documentation for client side development
